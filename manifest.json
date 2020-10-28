@@ -1,0 +1,26 @@
+{
+  "name": "AutoFill",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "./utils/console.js",
+        "./utils/jquery.js",
+        "./utils/uuid.js",
+        "./lib/index.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "tabs"
+  ]
+}

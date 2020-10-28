@@ -1,0 +1,29 @@
+{
+  "name": "chrome-tools",
+  "version": "1.0.0",
+  "description": "一个可以记住表单值，并在下次刷新时回填上去的插件。",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/changnan666/chrome-tools.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/changnan666/chrome-tools/issues"
+  },
+  "homepage": "https://github.com/changnan666/chrome-tools#readme",
+  "dependencies": {
+    "@types/chrome": "0.0.125",
+    "@types/jquery": "^3.5.3",
+    "@types/uuid": "^8.3.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2"
+  }
+}
