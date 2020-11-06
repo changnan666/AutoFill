@@ -1,3 +1,4 @@
+/** 自动调整浮窗位置 */
 export default (ele: HTMLElement, DOMRect: DOMRect) => {
   const { y } = ele.getBoundingClientRect();
   const { height, y: baseY } = DOMRect;

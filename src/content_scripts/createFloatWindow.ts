@@ -1,7 +1,10 @@
 import { enable } from ".";
 import adjustmentFloatWindiwPos from "./adjustmentFloatWindiwPos";
 
-/** 创建浮窗 */
+/** 创建方向控制器 */
+const createDirectionController = (div: HTMLElement) => {};
+
+/** 创建功能浮窗 */
 export default (
   DOMRect: DOMRect,
   id: string,
@@ -46,6 +49,8 @@ export default (
   $(div).append(remember, clear);
 
   enable && $(div).css({ display: "flex" });
+
+  createDirectionController(div);
   adjustmentFloatWindiwPos(div, DOMRect);
 
   return div;
