@@ -111,6 +111,9 @@ const start = () => {
 
   window.removeEventListener("keydown", onKeydown);
   window.addEventListener("keydown", onKeydown);
+
+  window.removeEventListener("resize", readyCreate);
+  window.addEventListener("resize", readyCreate);
 };
 
 const support = (url: string[]) => {

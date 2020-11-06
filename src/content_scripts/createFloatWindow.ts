@@ -1,3 +1,4 @@
+import { enable } from ".";
 import adjustmentFloatWindiwPos from "./adjustmentFloatWindiwPos";
 
 /** 创建浮窗 */
@@ -44,7 +45,8 @@ export default (
   $(div).html("");
   $(div).append(remember, clear);
 
-  
+  enable && $(div).css({ display: "flex" });
+  adjustmentFloatWindiwPos(div, DOMRect);
 
   return div;
 };
