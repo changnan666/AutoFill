@@ -57,6 +57,7 @@ const onClick = (e: MouseEvent) => {
   e.target.style.backgroundColor = (enable = !enable) ? "blue" : "gray";
 };
 
+/** 页面上每个表单的聚焦事件 */
 const onFocus = (id: string, ele: HTMLElement) => {
   currFocusId = id;
   enable && $(`#${id}`).css("display", "flex");
