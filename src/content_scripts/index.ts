@@ -81,6 +81,10 @@ const readyCreate = () => {
   });
 };
 
+const onKeydown = (e: KeyboardEvent) => {
+  keydown(e, trigger);
+};
+
 const start = () => {
   const paths = injectPathForFormElement(document.body.children as any);
   restoreDataFromStorage(paths);
@@ -92,8 +96,12 @@ const start = () => {
   }
 
   trigger = createTrigger();
+
+  trigger.removeEventListener("click", onClick);
   trigger.addEventListener("click", onClick);
-  window.addEventListener("keydown", (e) => keydown(e, trigger));
+
+  window.removeEventListener("keydown", onKeydown);
+  window.addEventListener("keydown", onKeydown);
 };
 
 const support = (url: string[]) => {
