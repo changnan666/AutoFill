@@ -44,7 +44,7 @@ export default (
   $(div).html("");
   $(div).append(remember, clear);
 
-  adjustmentFloatWindiwPos(div, DOMRect);
+  
 
   return div;
 };

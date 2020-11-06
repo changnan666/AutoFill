@@ -4,6 +4,7 @@ import { keydown } from "./hotKey";
 import restoreDataFromStorage from "./restoreDataFromStorage";
 import { clearCache, injectPathForFormElement, setCache } from "./utils";
 import uuid from "uuid";
+import adjustmentFloatWindiwPos from "./adjustmentFloatWindiwPos";
 
 let enable = false;
 let trigger: HTMLElement;
@@ -56,6 +57,14 @@ const onClick = (e: MouseEvent) => {
   e.target.style.backgroundColor = (enable = !enable) ? "blue" : "gray";
 };
 
+const onFocus = (id: string, ele: HTMLElement) => {
+  currFocusId = id;
+  enable && $(`#${id}`).css("display", "flex");
+
+  const div = document.getElementById(id) as HTMLElement;
+  adjustmentFloatWindiwPos(div, ele.getBoundingClientRect());
+};
+
 /** 准备创建浮窗 */
 const readyCreate = () => {
   const allForm = [...document.querySelectorAll(FORMELEMENT)]
@@ -73,8 +82,7 @@ const readyCreate = () => {
     const DOMRect = ele.getBoundingClientRect();
 
     ele.addEventListener("focus", () => {
-      currFocusId = id!;
-      enable && $(`#${id}`).css("display", "flex");
+      onFocus(id!, ele);
     });
 
     createFloatWindow(DOMRect, id!, onRemember, onClear);
