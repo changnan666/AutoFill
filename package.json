@@ -4,7 +4,8 @@
   "description": "一个可以记住表单值，并在下次刷新时回填上去的插件。",
   "main": "index.js",
   "scripts": {
-    "start": "tsc --watch",
+    "start": "webpack --env=development --watch",
+    "build": "webpack --env=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +22,12 @@
   "dependencies": {
     "@types/chrome": "0.0.125",
     "@types/jquery": "^3.5.3",
-    "@types/uuid": "^8.3.0"
+    "@types/uuid": "^8.3.0",
+    "ts-loader": "^8.0.9",
+    "typescript": "^4.0.5",
+    "uuid": "^8.3.1",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-merge": "^5.3.0"
   }
 }

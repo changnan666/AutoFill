@@ -5,6 +5,7 @@
       "DOM.Iterable",
       "ESNext",
     ],
+    "baseUrl": ".",
     "outDir": "plugin",
     "target": "esnext",
     "module": "esnext",
